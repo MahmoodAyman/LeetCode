@@ -3,7 +3,7 @@ public:
         bool possible(vector<int>&nums,int mid, int threshold) {
         long long res = 0;
         for (int i = 0; i < (int)nums.size(); i++) {
-            double a = ceil(double(double(nums[i]) / double(mid)));
+            int a=(nums[i]+mid-1)/mid; // ceil equation better than casting
             res += a;
         }
         return res <= threshold;
