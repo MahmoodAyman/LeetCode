@@ -7,10 +7,10 @@ public:
                 adj_flowers++;
                 if (adj_flowers >= k) {
                     adj_flowers = 0;
-                    bouquets++;
+                    bouquets++;// start new bouquets
                 }
                 if (bouquets == m)return true;
-            }else adj_flowers=0;
+            }else adj_flowers=0;// start new adj if current element < k 
 
         }
         return false;
