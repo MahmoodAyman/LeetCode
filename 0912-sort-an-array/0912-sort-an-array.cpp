@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<int> sortArray(vector<int>& nums) {
-     vector<int>ans;
         int mx = -100000;
      for(auto &it:nums){
          if(it<0){
