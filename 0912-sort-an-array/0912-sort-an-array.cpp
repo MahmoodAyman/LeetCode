@@ -13,11 +13,12 @@ public:
      for(auto &it:nums){
          freq[it + mx]++;
      }
+        int idx =0;
      for(int i = 0;i<mx*2+2;i++){
          while(freq[i]--){
-            ans.emplace_back(i-mx);
+            nums[idx++] = i - mx;
          }
      }
-        return ans;
+        return nums;
     }
 };
