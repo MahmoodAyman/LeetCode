@@ -1,21 +1,20 @@
 class Solution {
 public:
     vector<int> sortArray(vector<int>& nums) {
-        int mx = -100000;
+    int mx = -100000,mn = 100000;
      for(auto &it:nums){
-         if(it<0){
-             mx = max(mx,it*-1);
-         }
-         else mx= max(mx,it);
+         mn = min(it,mn);
+         mx = max(it,mx);
      }
-     vector<int>freq(mx*2+2);
+    int sz = mx - mn;
+     vector<int>freq(sz+1);
      for(auto &it:nums){
-         freq[it + mx]++;
+         freq[it - mn]++;
      }
         int idx =0;
-     for(int i = 0;i<mx*2+2;i++){
+     for(int i = 0;i<sz+1;i++){
          while(freq[i]--){
-            nums[idx++] = i - mx;
+            nums[idx++] = i + mn;
          }
      }
         return nums;
