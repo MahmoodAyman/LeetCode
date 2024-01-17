@@ -1,11 +1,12 @@
 /**
  * @return {Function}
  */
-var createHelloWorld = function() {
-    return function(...args) {
-        return"Hello World";
+function createHelloWorld() {
+    const h = "Hello ";
+    return function createWorld(){
+        return h + "World";
     }
-};
+}
 
 /**
  * const f = createHelloWorld();
